@@ -1,4 +1,5 @@
 import xlrd
+import re
 
 
 def open_excel(file='file.xls'):
@@ -70,7 +71,7 @@ if __name__ == "__main__":
     data = input("Enter input: ")
     try:
         filename = 'packet.xlsx'
-        p = [i for i in get_excel_datas(filename) if i.find(data)]
+        p = [i for i in get_excel_datas(filename) if re.findall(data, i)]
         for i in p:
             print(i)
     except Exception as e:
