@@ -39,7 +39,7 @@ def day_get(d, num):
 def logzip(num):
     d = datetime.datetime.now()
     days = []
-    for i in range(num):
+    for i in range(1, num):
         days.append(day_get(d, i))
     zip_dir('./', days, '%s__%ddays' % (d.strftime('%Y-%m-%d'), num))
 
